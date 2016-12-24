@@ -24,9 +24,15 @@ class Chat extends Component {
     }
 
     componentWillUpdate () {
-        const {access, activeRoom} = this.props;
+        const {access, username, activeRoom} = this.props;
+
+        if (!username) {
+            //если зашли без имени, возращаем обратно
+            browserHistory.push('/');
+        }
 
         if (!access && activeRoom.name == 'lobby') {
+            //если нет доступа и переходят в лобби, переключаем на страницу подтверждения пароля
             browserHistory.push('/verification');
         }
     }
