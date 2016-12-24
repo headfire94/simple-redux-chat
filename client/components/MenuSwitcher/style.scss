@@ -1,0 +1,31 @@
+.menuSwitcher {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1.5rem;
+
+    width: 40px;
+    height: 31px;
+    cursor: pointer;
+    
+    &:hover {
+        .menuSwitcher__line {
+            background: #9c9c9c;
+        }
+    }
+
+    &__line {
+        width: 40px;
+        height: 5px;
+        background-color: #ecf0f1;
+        display: block;
+        margin: 8px auto;
+
+        &:first-child {
+            margin-top:0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
