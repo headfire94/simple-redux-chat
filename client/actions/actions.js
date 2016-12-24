@@ -1,4 +1,6 @@
 import * as types from '../constants/actionTypes'
+//@todo использовать redux-actions
+
 
 export const switchRoom = (room) => ({
     type: types.SWITCH_ROOM,
@@ -10,14 +12,6 @@ export const addNewMessage = (message) => ({
     message
 })
 
-export const calculateResponsiveState = ({innerWidth, matchMedia} = {}) => {
-    return {
-        type: types.CALCULATE_RESPONSIVE_STATE,
-        innerWidth,
-        matchMedia,
-    }
-}
-
 export const changeWidth = (screenWidth) => {
     return {
         type: types.CHANGE_WIDTH,
@@ -25,6 +19,7 @@ export const changeWidth = (screenWidth) => {
     };
 }
 
+//@todo добавить throttle
 export const initResponsive = ()=> {
     return dispatch => {
         dispatch(changeWidth(window.innerWidth));

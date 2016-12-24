@@ -3,8 +3,8 @@ import {
 } from '../constants/actionTypes'
 
 let initialState = {
-    name : 'lobby',
-    id : 0
+    name : 'room1',
+    id : 1
 }
 
 const activeRoom = (state = initialState, action)=> {

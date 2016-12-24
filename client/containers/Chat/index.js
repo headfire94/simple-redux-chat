@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {browserHistory} from 'react-router';
 import uuid from 'uuid';
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
@@ -22,8 +23,16 @@ class Chat extends Component {
         }
     }
 
+    componentWillUpdate () {
+        const {access, activeRoom} = this.props;
+
+        if (!access && activeRoom.name == 'lobby') {
+            browserHistory.push('/verification');
+        }
+    }
+
     handleSubmit = (data) => {
-        let {activeRoom, username, actions} = this.props;
+        const {activeRoom, username, actions} = this.props;
 
         if (data.length === 0) {
             //если ничего не ввели - действие не требуется
@@ -42,7 +51,7 @@ class Chat extends Component {
     }
 
     changeActiveRoom = (room) => {
-        let {actions} = this.props;
+        const {actions} = this.props;
         actions.switchRoom(room);
     }
 
@@ -114,6 +123,7 @@ function mapStateToProps(state) {
     return {
         rooms: state.rooms,
         activeRoom: state.activeRoom,
+        access : state.auth.access,
         username: state.auth.username,
         screenWidth: state.responsive.screenWidth,
         messages: getVisibleMessages(state)
