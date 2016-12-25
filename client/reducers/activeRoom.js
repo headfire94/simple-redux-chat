@@ -1,6 +1,6 @@
 import {
     SWITCH_ROOM
-} from '../constants/actionTypes'
+} from '../constants/actionTypesNames'
 
 let initialState = {
     name : 'room1',

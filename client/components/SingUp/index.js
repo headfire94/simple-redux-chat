@@ -20,11 +20,12 @@ class SingUp extends Component {
     render() {
         const {loading, errors} = this.props;
         return (
-            <div className={styles.auth}>Введите имя
+            <div className={styles.auth}>
+                <div className={styles.auth__title}>Введите имя</div>
                 {
                     errors && <div className={styles.auth__error}>Введите хотябы 1 символ</div>
                 }
-                <Form onSubmit={this.onSubmit}/>
+                <Form  onSubmit={this.onSubmit}/>
                 <Preloader loading={loading}/>
             </div>
         );

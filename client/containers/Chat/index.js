@@ -86,7 +86,7 @@ class Chat extends Component {
             children
         } = this.props;
 
-        let showHamburger = screenWidth < 1024;
+        let showHamburger = screenWidth < 544;
 
         let chatRoomsClass = classnames({
             [styles.chat__rooms]: true,

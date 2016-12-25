@@ -1,11 +1,11 @@
 import {
-    AUTH_SIGN_IN,
+    AUTH_SIGN_IN_SUCCESS,
     AUTH_SIGN_IN_FAIL,
-    AUTH_SIGNING_IN,
+    AUTH_SIGN_IN,
     AUTH_VERIFICATION,
     AUTH_VERIFICATION_FAIL,
     AUTH_VERIFICATION_SUCCESS
-} from '../constants/actionTypes';
+} from '../constants/actionTypesNames';
 
 const auth = (state = {
     username : undefined,
@@ -14,7 +14,7 @@ const auth = (state = {
     errors : false
 }, action) => {
     switch (action.type) {
-        case AUTH_SIGNING_IN :
+        case AUTH_SIGN_IN :
             return {
                 ...state,
                 username: action.username,
@@ -37,7 +37,7 @@ const auth = (state = {
                 errors : true,
                 loading : false
             };
-        case AUTH_SIGN_IN :
+        case AUTH_SIGN_IN_SUCCESS :
             return {
                 ...state,
                 username: action.username,

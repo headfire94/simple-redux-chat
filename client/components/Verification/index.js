@@ -20,7 +20,8 @@ class Verification extends Component {
     render() {
         const {loading, errors} = this.props;
         return (
-            <div className={styles.auth}>Введите пароль (123)
+            <div className={styles.auth}>
+                <div className={styles.auth__title}>Введите пароль (123)</div>
                 {
                     errors && <div className={styles.auth__error}>Неправильный пароль</div>
                 }

@@ -12,7 +12,7 @@
         background: #303e4d;
         transition: 0.3s;
 
-        @media (max-width:1023px) {
+        @media (max-width:544px) {
             transform: translateX(-100%);
         }
 
@@ -31,7 +31,7 @@
         align-content: flex-start;
         align-items: inherit;
 
-        @media (max-width:1023px) {
+        @media (max-width:544px) {
             margin-left: 0;
         }
     }
@@ -51,6 +51,7 @@
     
     &__body {
         flex: 1;
+        max-height: calc(100% - 91px);
     }
 
     &__footer {

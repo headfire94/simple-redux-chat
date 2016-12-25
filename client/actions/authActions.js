@@ -1,13 +1,13 @@
 import {browserHistory} from 'react-router';
-import * as types from '../constants/actionTypes'
+import * as types from '../constants/actionTypesNames'
 
 const validateSignIn = (username) => ({
-    type: types.AUTH_SIGNING_IN,
+    type: types.AUTH_SIGN_IN,
     username
 })
 
 const receiveSignIn = (username) => ({
-    type: types.AUTH_SIGN_IN,
+    type: types.AUTH_SIGN_IN_SUCCESS,
     username
 })
 

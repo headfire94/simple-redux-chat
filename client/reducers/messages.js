@@ -1,6 +1,6 @@
 import {
     ADD_MESSAGE
-} from '../constants/actionTypes';
+} from '../constants/actionTypesNames';
 
 
 
